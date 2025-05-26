@@ -1,0 +1,89 @@
+.graphs-container {
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Stack children vertically */
+    padding: 20px;
+    margin-bottom: 100px; /* Space above the footer */
+    height: calc(100vh - 170px); /* Full height minus header and footer */
+}
+
+.graphs-header {
+    display: flex;
+    justify-content: center; /* Center the buttons container */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* The container for the buttons */
+.graphs-buttons-container {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Add space between the buttons */
+}
+
+/* Style for individual buttons */
+.graph-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 3px;
+}
+
+.graph-button:hover {
+    background-color: #45a049;
+}
+
+.graphs-content {
+    display: flex;
+    flex-grow: 1; /* Allow content area to fill the available space */
+}
+
+.graphs-list,
+.graph-preview,
+.graph-properties {
+    overflow-y: auto; /* Make only these parts scrollable */
+    height: 100%; /* Ensure each part takes full height of the container */
+}
+
+.graphs-list {
+    flex: 0 0 20%; /* Do not grow, do not shrink, initial width 30% */
+    border-right: 1px solid #ccc;
+    padding: 10px;
+}
+
+.graph-preview {
+    flex: 1; /* Allow preview to take the remaining space */
+    padding: 10px;
+}
+
+.graph-properties {
+    flex: 0 0 20%; /* Do not grow, do not shrink, initial width 20% */
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.graph-properties ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0;
+}
+
+.graph-properties li {
+    background-color: #f4f4f4;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.graph-creation-form {
+    display: none; /* Hide the form initially */
+    /* Add more styles when the form is displayed */
+}
+
+/* When the 'Create Graph' button is clicked, this class can be toggled */
+.graph-creation-form-active {
+    display: block; /* Show the form */
+    /* Additional styles when active */
+}

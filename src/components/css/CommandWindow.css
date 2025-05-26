@@ -1,0 +1,86 @@
+/* CommandWindow.css */
+.commands-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    margin-bottom: 100px; /* Space for the footer */
+    min-height: calc(100vh - 150px); /* Adjusting for footer height */
+}
+
+.command-history {
+    width: 180px; /* Fixed width */
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto; /* Allows scrolling */
+    background-color: #f0f0f0;
+    word-wrap: break-word; /* Ensures text wraps to avoid overflow */
+}
+
+.command-console {
+    flex-grow: 1;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.command-output {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.command-form {
+    display: flex;
+    align-items: flex-end; /* Aligns form elements to the bottom */
+}
+
+.command-input {
+    flex-grow: 1;
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    resize: none; /* Prevent resizing */
+    overflow: auto; /* Allow internal scrolling */
+}
+
+.command-button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.command-input:focus,
+.command-button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .commands-container {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .command-history,
+    .command-console {
+        width: 100%;
+    }
+
+    .command-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .command-input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .command-button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,60 @@
+/* Container for the main content, adjusting for sidebar and footer */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 100px; /* Space for the footer; match your footer's height */
+    min-height: calc(100vh - 100px); /* Adjust height for the footer */
+}
+
+/* Sections within the home container */
+.left-section, .right-section {
+    flex: 1;  /* Each section takes half of the available width */
+    padding: 10px;
+}
+
+/* Placeholder for images or other content */
+.image-placeholder {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure the image fits within the container */
+}
+
+.image-placeholder .image-title {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #e0e0e0; /* Background color for the image title */
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; /* Truncate long titles with ellipsis */
+}
+
+/* Styling for tables within the home content */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4; /* Light gray background for table headers */
+}

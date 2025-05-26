@@ -1,0 +1,295 @@
+/* Basic Application Layout */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* Ensures content within Routes uses available space */
+.content, .Routes {
+  flex: 1;
+}
+
+/* Styling for Sidebar */
+.sidebar {
+  width: 250px; /* Standard sidebar width */
+  min-height: 100vh; /* Full viewport height */
+  background-color: #f4f4f9; /* Light background for the sidebar */
+  position: fixed; /* Fixed position to stay visible during scrolling */
+  top: 0; /* Top alignment */
+  left: 0; /* Left alignment */
+  overflow-y: auto; /* Enable scrolling within the sidebar */
+}
+
+/* Main Content Styling */
+.main-content {
+  flex-grow: 1; /* Allow content to fill available space */
+  padding: 20px; /* Padding around content */
+  overflow-y: auto; /* Scrollable content */
+}
+
+/* Styling for Sidebar Interaction */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.sidebar a {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:visited,
+.sidebar a:active {
+  color: black; /* Consistent color for interactions */
+}
+
+.sidebar li.active {
+  background-color: #5046ae; /* Highlight for active menu item */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width for smaller screens */
+    position: static; /* Non-fixed to allow natural flow */
+  }
+  .home-container {
+    margin-left: 0; /* Sidebar might be hidden or take full width on smaller screens */
+    margin-bottom: 50px; /* Smaller footer on mobile devices */
+    min-height: calc(100vh - 50px); /* Adjusted for smaller footer */
+  }
+  .footer, .main-content {
+    margin-left: 0; /* Remove margin as sidebar is not fixed */
+    width: 100%; /* Full width */
+  }
+
+  .footer {
+    position: static; /* Allow footer to be part of natural flow */
+    height: auto; /* Adjust height as needed */
+  }
+}
+
+/* Login Page Specific Styles */
+.login-page input,
+.login-page button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.login-page button {
+  cursor: pointer;
+}
+
+/* LogFiles specific styles */
+.logfiles-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: calc(100vh - 150px); /* Adjust based on footer height */
+  position: relative; /* Needed for correct footer positioning */
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.toggle-buttons button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-right: 10px;
+}
+
+.toggle-buttons button.active {
+  background-color: #0056b3;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.logfile-entry {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.logfile-entry:hover {
+  background-color: #f4f4f4;
+}
+
+.logfile-entry.active {
+  background-color: #d0e4f7; /* Highlight color for active entry */
+}
+
+.logfile-entry span {
+  flex-grow: 1; /* Allow the filename to take as much space as possible */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis if the filename is too long */
+  white-space: normal; /* Allow wrapping */
+  word-break: break-all; /* Break words if too long */
+  width: 100%; /* Ensure it takes full width */
+  text-align: left; /* Align text to the left */
+  margin-right: 10px; /* Add space between the filename and the button */
+}
+
+.download-button {
+  flex-shrink: 0; /* Prevent the button from shrinking */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
+
+.logfile-preview {
+  padding: 10px;
+  overflow-y: auto; /* Makes the preview scrollable vertically */
+  max-height: calc(100vh - 150px); /* Ensure it doesn't overflow the viewport */
+  width: 100%;
+}
+
+
+
+.dropdown-container {
+    width: 250px; /* Fixed width for the dropdown container */
+    max-height: 100vh; /* Limit height to viewport height */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+.dropdown-container input[type="checkbox"] {
+    margin-right: 8px; /* Adds some space between checkbox and label */
+}
+.dropdown-container div {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 5px; /* Adds some space between items */
+}
+
+.dropdown-container label {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; /* Add space between the dropdowns */
+}
+
+.dropdown-container select {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+/* Style for scrollbars (optional) */
+.dropdown-container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.dropdown-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+.dropdown-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+}
+
+.dropdown-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background color of the scrollbar track */
+ }
+
+/* Horizontal Scrollbar Container */
+.horizontal-scrollbar {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 20px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: none; /* Hidden by default */
+}
+
+.horizontal-scrollbar::-webkit-scrollbar {
+  height: 12px; /* Set the height of the horizontal scrollbar */
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Background of the scrollbar thumb */
+}
+
+.horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Background of the scrollbar thumb on hover */
+}
+
+/* Adjust existing styles if needed */
+.logfile-content-container {
+  overflow-x: hidden; /* Hide the default horizontal scrollbar */
+  display: flex;
+  flex-direction: column;
+}
+
+.logfile-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    white-space: nowrap;
+}
+
+.table-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-container thead th {
+  position: sticky;
+  top: 0; /* Adjust based on the height of the horizontal scrollbar */
+  background-color: #fff; /* Background color to avoid overlap */
+  z-index: 2; /* Ensure the header is above the rest of the content */
+}
+
+.table-container thead {
+  position: sticky;
+  top: 0; /* Adjust based on the height of the horizontal scrollbar */
+  z-index: 1;
+}
+
+.chart-container {
+  width: 100%; /* Ensure it takes up the full width of its parent */
+  max-width: 100%; /* Prevent it from expanding beyond its parent */
+  overflow: hidden; /* Hide any overflow content */
+  position: relative; /* Position relative to allow absolute children */
+}
+
+.chart-container canvas {
+  width: 100% !important; /* Ensure the canvas width matches its container */
+  height: auto !important; /* Maintain aspect ratio */
+}
+

@@ -1,0 +1,83 @@
+.images-container {
+    display: flex;
+    padding: 20px;
+    min-height: calc(100vh - 150px); /* Adjust based on footer height */
+    max-height: 80%;
+    margin-bottom: 100px;
+    position: relative; /* Needed for correct footer positioning */
+}
+
+.images-list {
+    width: 30%;
+    overflow-y: auto; /* Only this part is scrollable */
+    border-right: 1px solid #ccc;
+    padding: 10px;
+}
+
+.image-entry {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.image-entry:hover {
+    background-color: #f4f4f4;
+}
+
+.image-entry.active {
+    background-color: #d0e4f7; /* Highlight color for active entry */
+}
+
+.image-entry img {
+    width: 50px; /* Thumbnail width */
+    height: 50px; /* Thumbnail height */
+    margin-right: 10px;
+}
+
+.image-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.image-title.selected {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.image-preview {
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaces content and pushes buttons to the bottom */
+    align-items: center; /* Center the image */
+}
+
+.image-preview img {
+    max-width: 100%; /* Full width of the preview area */
+    height: auto;
+    flex-grow: 1; /* Allows the image to expand and fill the available space */
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+}
